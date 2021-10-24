@@ -1,0 +1,115 @@
+//    Mixins
+@mixin transition($args: all 0.3s ease 0s) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin transition-duration($args1, $args2) {
+    -webkit-transition-duration: $args1, $args2;
+    -moz-transition-duration: $args1, $args2;
+    -o-transition-duration: $args1, $args2;
+    transition-duration: $args1, $args2;
+}
+
+@mixin transition-delay($delay...) {
+    -webkit-transition-delay: $delay;
+    -moz-transition-delay: $delay;
+    -o-transition-delay: $delay;
+    transition-delay: $delay;
+}
+
+@mixin transition-property($args1, $args2) {
+    -webkit-transition-property: $args1, $args2;
+    -moz-transition-property: $args1, $args2;
+    -o-transition-property: $args1, $args2;
+    transition-property: $args1, $args2;
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+    // For Google Chrome
+    &::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+    } 
+    &::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+    } 
+    &::-webkit-scrollbar-track {
+      background: $background-color;
+    } 
+    // For Internet Explorer
+    & {
+      scrollbar-face-color: $foreground-color;
+      scrollbar-track-color: $background-color;
+    }
+  }
+
+// Placeholder Mixins
+@mixin placeholder {
+    &.placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+@mixin gradient($deg,  $gradient...) {
+    background: -webkit-linear-gradient($deg, $gradient);
+    background: -moz-linear-gradient($deg, $gradient);
+    background: -o-linear-gradient($deg, $gradient);
+    background: linear-gradient($deg, $gradient);
+}
+
+@mixin gradient-border($deg, $args1, $args2) {
+    border-image-source: -webkit-linear-gradient($deg, $args1, $args2);
+    border-image-source: -moz-linear-gradient($deg, $args1, $args2);
+    border-image-source: -o-linear-gradient($deg, $args1, $args2);
+    border-image-source: linear-gradient($deg, $args1, $args2);
+}
+
+@mixin filter ($filter-value) {
+    -webkit-filter: ($filter-value);
+    -moz-filter: ($filter-value);
+    -ms-filter: ($filter-value);
+    -o-filter: ($filter-value);
+    filter: ($filter-value);
+}
+
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+    transform: $transform;
+}
+
+@mixin keyframes ( $animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation ($args) {
+    -webkit-animation: $args;
+    -moz-animation: $args;
+    -o-animation: $args;
+    animation: $args;
+}

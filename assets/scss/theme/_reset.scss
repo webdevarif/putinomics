@@ -1,0 +1,122 @@
+ body {
+    line-height: 1.9;
+    font-size: 16px;
+    font-family: $primary-font;
+    font-weight: 400;
+    color: $text-color;
+    background: #fff;
+ }
+ 
+
+
+// body {
+// }
+
+html,
+body {
+    height: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.li {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    color: $title-color;
+    font-family: $primary-font;
+}
+
+h1 {
+    font-size: 42px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    @include transition();
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        outline: none;
+    }
+}
+
+select:focus,
+div:focus,
+button:focus,
+a:focus,
+textarea:focus,
+input:focus,
+.form-control:focus,
+.btn:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+@media (min-width: 1200px){
+    .container {
+        max-width: 1400px;
+    }
+}
+
+img, svg{
+    max-width: 100%;
+}
+.text-primary{
+    color: $primary-color !important;
+}
+.text-primary2{
+    color: $primary-color2 !important;
+}
+.text-red{
+    color: #ED5051 !important;
+}
+
+.Custom_Scrollbar{
+    @include scrollbars (8px, rgba(#C2C2D6, 0.4), rgba(#C2C2D6, 0.2));
+    @include transition();
+    &:hover{
+        @include scrollbars (8px, rgba(#C2C2D6, 1), rgba(#C2C2D6, 0.2));
+    }
+}
+
+
+
+
+
+
+
